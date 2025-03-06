@@ -1,0 +1,293 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    height: 5rem;
+    background-color: white;
+    margin-bottom: 0.5rem;
+}
+
+.navbar-signup,.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.navbar-brand i {
+    font-size: 2.5rem;
+    margin-left:10px ;
+    color: #FF6F3C;
+}
+
+.navbar-nav a {
+    color: #333333 !important;
+}
+
+.navbar-nav a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+
+/* .navbar-search {
+    margin-left:25vw;
+} */
+
+.navbar-search input{
+    border:1px solid #333333 !important;
+    border-radius: 20px;
+    height: 2.5rem;
+    width: 20vw;
+    margin-left:12rem;
+}
+
+#search-btn {
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    background-color: #FF6F3C !important;
+    color: white;
+}
+
+#filterForm,#search-form {
+    display: contents; 
+}
+  
+
+#filters {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+}
+
+.filter {
+    margin: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.75;
+}
+
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter i {
+    font-size: 1.5rem;
+    color: #333333 !important;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+
+
+.filter button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-btn {
+    margin: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    border: 1px solid #333333 !important;
+    border-radius: 15px !important;
+    padding: 10px !important;
+    font-size: 0.9rem !important;  
+    height: 3rem;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    
+}
+
+
+
+@media (min-width: 992px) {
+    #offcanvasFilter {
+        visibility: visible !important;
+        transform: none !important;
+        position: relative !important;
+    
+    }
+}
+
+
+.tax-switch {
+    margin: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 2rem;
+    border: 1px solid #333333;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 0.8rem;  
+    height: 3rem;  
+    display:flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-switch input {
+    color: #FF6F3C !important;
+}
+
+/* Footer */
+.footer {
+    height: 7rem;
+    background-color: lightgray;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.f-info-social,
+.f-info-links,
+.f-info-company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-social a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.f-info-links a {
+    margin-right: 0.7rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+/* Listings */
+.all-listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+}
+
+.all-listings a {
+    text-decoration: none;
+}
+
+.card,
+.main-card {
+    border: none !important;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-img-top {
+    width: 100% !important;
+    border-radius: 1rem !important;
+    height: 20rem !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    width: 100% !important;
+}
+
+.card-img-top:hover {
+    opacity: 0.8;
+}
+
+/* Add listing form */
+.listing-form {
+    margin-top: 1rem !important;
+    margin-bottom: 4rem !important;
+}
+
+.form-control:focus {
+    border-color: #FF6F3C !important;
+    box-shadow: 0 0 5px #FF6F3C !important;
+}
+
+/* Show listing */
+.edit-delete {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listing-card {
+    background-color:  #F8F1E7 !important;
+    border-radius: 1rem;
+
+}
+
+
+
+
+@media (max-width: 600px) {
+    .main-card {
+        width: 80vw !important;
+    }
+    .mapbox {
+        left: 0 !important;
+    }
+    .map {
+        width: 80vw !important;
+    }
+    .review-card {
+        width:fit-content !important;
+    }
+    .navbar-search input {
+        margin-left: 0;
+        width: 50%;
+    }
+    .all-listings {
+        justify-content: center !important; 
+    }
+}
+
+/* Listing details */
+.listing-details {
+    line-height: 1.9rem;
+}
+
+/* preview image */
+.preview_img img {
+    width: 15vw;
+    margin-top: 10px;
+}
+
+/* map */
+#map {
+    height: 450px;
+    width: 75vw;
+    border-radius: 1rem;
+}
+
+.mapbox {
+    position: relative;
+    left: -20%;
+}

@@ -1,0 +1,131 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div id="filters">
+      <form action="/listings/filter" method="post" id="filterForm">
+        <input type="hidden" id="categoryInput" name="listing[category]" value="">
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Trending')">
+            <i class="fa-solid fa-fire"></i>
+            <p>Trending</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Farms')">
+            <i class="fa-solid fa-tractor"></i>
+            <p>Farms</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Rooms')">
+            <i class="fa-solid fa-bed"></i>
+            <p>Rooms</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Iconic_cities')">
+            <i class="fa-solid fa-mountain-city"></i>
+            <p>Iconic cities</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Pools')">
+            <i class="fa-solid fa-person-swimming"></i>
+            <p>Pools</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Camping')">
+            <i class="fa-solid fa-campground"></i>
+            <p>Camping</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Ships')">
+            <i class="fa-solid fa-ship"></i>
+            <p>Ships</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Arctic')">
+            <i class="fa-solid fa-snowflake"></i>
+            <p>Arctic</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Beach')">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Beach</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Castles')">
+            <i class="fa-brands fa-fort-awesome"></i>
+            <p>Castles</p>
+          </button>
+        </div>
+
+        <div class="filter">
+          <button type="submit" onclick="setValue(event, 'Caves')">
+            <i class="fa-solid fa-igloo"></i>
+            <p>Caves</p>
+          </button>
+        </div>
+      </form>
+      <div class="tax-switch">
+        <div class="form-check-reverse form-switch">
+          <label for="flexSwitchCheckDefault">Display total after taxes</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        </div>
+    </div>
+    </div>
+
+    <div class="all-listings container">
+      <% for (let listing of allListings) { %>
+        <% if(category == listing.category) { %>
+        <a href="/listings/<%= listing._id %>">
+          <div class="card row-cols-lg-3 row-cols-md-2 row-cols-sm-1" style="width: 18rem;">
+            <div class="card-img">
+              <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing-Image">
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <b><%= listing.title %></b> <br>
+                <div class="listing-price">&#8377; <%= listing.price.toLocaleString("en-IN") %><i class="tax-info">&nbsp; +18% GST</i></div>
+              </p>
+            </div>
+          </div>
+        </a>
+      <% }} %>
+    </div>
+
+    <script>
+      function setValue(event, category) {
+        event.preventDefault(); // Prevent the default form submission
+        document.getElementById("categoryInput").value = category;
+        document.getElementById("filterForm").submit(); // Submit the form
+      }
+      let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+      taxSwitch.addEventListener("click",()=>{
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo) {
+          if(info.style.display != "inline") {
+            info.style.display = "inline";
+          }
+          else {
+            info.style.display = "none";
+          }
+        }
+      })
+    </script>
+</body>

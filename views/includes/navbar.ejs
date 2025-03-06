@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md  border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"><i class="fa-solid fa-globe"></i></i></a>
+        <button class="btn d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body justify-content-center">
+                <div class="navbar-nav">
+                    <a class="nav-link text-center" href="/listings">Explore</a>
+                </div>
+                <div class="navbar-nav navbar-search mx-auto text-center">
+                    <form action="/listings/search" id="search-form" method="post" class="needs-validation d-flex justify-content-center"
+                        novalidate>
+                        <input type="text" class="form-control me-2"
+                            placeholder="Find&nbsp; your&nbsp; happi &nbsp;stay" name="search" required >
+                        <button class="btn" type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="navbar-nav navbar-signup   ms-auto">
+                    <a class="nav-link" href="/listings/new">Happi-stay your home</a>
+                    <% if(!currUser) { %>
+                        <a class="nav-link login-btn" href="/signup"><b>Sign up</b></a>
+                        <a class="nav-link login-btn" href="/login"><b>Login</b></a>
+                        <% } %>
+                            <% if(currUser) { %>
+                                <a class="nav-link" href="/logout">Logout</a>
+                                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</nav>
