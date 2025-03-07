@@ -100,6 +100,10 @@ app.use((err, req, res, next) => {
     res.status(status).render("error.ejs", { message });
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to HappiStay!');
+  });
+
 app.listen(8080,()=>{
     console.log("Server was listening");
 })
