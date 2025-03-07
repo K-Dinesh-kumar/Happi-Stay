@@ -85,7 +85,7 @@ app.use((req,res,next)=>{
 
 
 // listing route
-app.use("/listings",listingRouter);
+app.use("/",listingRouter);
 
 // review route
 app.use("/listings/:id/reviews",reviewRouter);
@@ -100,9 +100,6 @@ app.use((err, req, res, next) => {
     res.status(status).render("error.ejs", { message });
 });
 
-app.get('/', (req, res) => {
-    res.send('Welcome to HappiStay!');
-  });
 
 app.listen(8080,()=>{
     console.log("Server was listening");
