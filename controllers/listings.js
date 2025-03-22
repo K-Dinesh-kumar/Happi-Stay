@@ -1,4 +1,4 @@
-const listing = require("../models/listing");
+
 const Listing = require("../models/listing");
 const wrapAsync = require("../utils/wrapAsync");
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');

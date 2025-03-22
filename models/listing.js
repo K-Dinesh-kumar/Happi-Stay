@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
+const User = require("./user.js");
 
 const defaultImage = "https://tse2.mm.bing.net/th?id=OIP.qUpojKCesNeEXaA3Xy4HtAHaE7&pid=Api&P=0&h=180";
 
