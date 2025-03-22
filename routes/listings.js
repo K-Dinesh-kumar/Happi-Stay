@@ -22,10 +22,12 @@ router.route("/listings/search")
 
 
 // New listing form (new route)
-router.get("/listings/new", isLoggedIn, listingController.renderNewForm);
+router.route("/listings/new")
+    .get(isLoggedIn, listingController.renderNewForm);
 
 // edit route
-router.get("/listings/:id/edit", isLoggedIn, listingController.editListing);
+router.route("/listings/:id/edit")
+    .get(isLoggedIn, listingController.editListing);
 
 router.route("/listings/:id")
     .get(listingController.showListing)  // show particular listing (show route)
